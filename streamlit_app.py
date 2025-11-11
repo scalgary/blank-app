@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-tab1, tab2, tab3 = st.tabs(["First", "Graph","Third"])
+tab1, tab2, tab3, tab4 = st.tabs(["First", "Graph","Password Checker"])
 with tab1:
     st.title("🎈 My new app")
     st.write(
@@ -36,5 +36,7 @@ with tab3:
                 st.error(f' Fail : {condition}')
     else:
         st.write("Please enter a password")
+
+
 
 
