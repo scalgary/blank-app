@@ -1,0 +1,2 @@
+docker-compose --profile converter up
+docker-compose --profile password up
