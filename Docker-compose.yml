@@ -1,9 +1,24 @@
 
 services:
-  streamlit-app:
+  converter:
+    container_name: converter
     build: .
-    container_name: streamlit-app
     ports:
       - "8501:8501"
     volumes:
       - .:/workspace
+    command: streamlit run convertisseur.py --server.enableCORS false --server.address 0.0.0.0
+    profiles: ["converter"]
+
+  simple:
+    container_name: simple
+
+    build: .
+    ports:
+      - "8502:8501"
+    volumes:
+      - .:/workspace
+    command: streamlit run streamlit-app.py --server.enableCORS false --server.enableXsrfProtection false --server.address 0.0.0.0
+    profiles: ["password"]
+
+
